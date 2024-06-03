@@ -9,7 +9,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <section className="flex justify-center px-4">
-      <div className="flex flex-col pt-[240px] pb-[78px] items-center text-center w-full md:w-4/5 xl:w-3/5">
+      <div className="flex flex-col pt-28 md:pt-[240px] pb-[78px] items-center text-center w-full md:w-4/5 xl:w-3/5">
         <div className="flex flex-col items-center lg:w-4/5">
           <h1 className="font-bold text-[#202229] text-center text-3xl md:leading-[64px] md:text-[54px] mb-5">
             Finding the right fit{" "}
@@ -32,7 +32,7 @@ const Hero = () => {
             <div className="relative mb-10 w-full">
               <Input
                 className="w-full h-[74px] pl-[27px] pr-[101px] ring-yellow"
-                value={"Looking for design"}
+                defaultValue={"Looking for design |"}
               />
               <Button
                 size="icon"

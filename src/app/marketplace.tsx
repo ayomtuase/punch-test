@@ -8,8 +8,8 @@ import Link from "next/link";
 
 const MarketPlace = () => {
   return (
-    <section className="bg-[#EDEFFF]">
-      <div className="pt-[183px] pb-[127px]">
+    <section className="after:bg-[#EDEFFF] slant-edges">
+      <div className="py-20 lg:pt-[183px] lg:pb-[127px]">
         <h1 className="text-center w-4/5 mx-auto text-dark font-bold text-3xl md:leading-[64px] md:text-[54px] mb-12 lg:mb-[90px]">
           Your one-stop marketplace for finding the talent your business needs.
         </h1>

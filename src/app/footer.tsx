@@ -6,8 +6,8 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <section className="bg-[linear-gradient(180deg,_#0C0C0C_0%,_#202229_100%)] px-4 md:px-8 lg:px-[70px] pb-[148px]">
-        <div className="bg-purple h-[481px] flex justify-center items-center">
+      <section className="overflow-visible relative after:skew-y-[-3deg] after:content-[''] after:left-0 after:right-0 after:-top-[20px] lg:after:-top-[40px] after:h-[180px]  bg-[linear-gradient(180deg,_#0C0C0C_0%,_#202229_100%)] after:bg-[#0C0C0C] after:absolute px-4 md:px-8 lg:px-[70px] py-2 lg:py-5 pb-[148px]">
+        <div className="after:bg-purple z-10 slant-edges h-[481px] flex justify-center items-center">
           <div className="flex flex-col items-center text-center px-4 md:w-2/3 xl:w-1/2">
             <h1 className="font-semibold text-3xl md:leading-[64px] md:text-[54px] text-white">
               Need a job done, and done well? Get started
