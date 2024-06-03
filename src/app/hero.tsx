@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const thingsToType = ["developers", "designers", "product managers"];
+const thingsToType = ["developers", "designers", "PMs"];
 
 const initialInputValue = "Looking for";
 

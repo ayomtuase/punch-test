@@ -3,7 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 
 export const metadata: Metadata = {
-  title: "Zwilt Design by Ayo Oguntuase",
+  title: "Zwilt Design built by Ayo Oguntuase",
   description: "Punch Zwilt Submission",
 };
 
