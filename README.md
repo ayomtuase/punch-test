@@ -19,7 +19,7 @@ ShadcnUI and TailwindCSS were used for quick styling and development.
 
 Green Sock Animation Platform was used for scroll animations
 
-[Deployed on Vercel](ayo-zwilt-punch.vercel.app)
+[Deployed on Vercel](https://ayo-zwilt-punch.vercel.app/)
 
 
 
