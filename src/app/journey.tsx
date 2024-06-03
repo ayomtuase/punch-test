@@ -10,7 +10,7 @@ const Journey = () => {
       <h1 className="text-dark mb-10 text-center font-bold text-3xl md:leading-[64px] md:text-[54px]">
         Start your journey today.
       </h1>
-      <div className="relative lg:h-[337px] mb-5 bg-[#EDEFFF] -skew-y-3 overflow-hidden">
+      <div className="relative lg:h-[332px] mb-5 bg-[#EDEFFF] -skew-y-3 overflow-hidden">
         <div className="flex flex-col lg:flex-row px-4 lg:px-6 gap-y-6 lg:gap-y-0 pt-8 lg:pt-0 justify-between items-center skew-y-3 overflow-visible">
           <div className="flex lg:w-2/5">
             <One className="shrink-0" />
@@ -42,7 +42,7 @@ const Journey = () => {
             <Image
               alt="hire your next top performer"
               src="/assets/images/top-performer.png"
-              className="relative lg:-top-8"
+              className="relative -bottom-2 lg:-top-6"
               height={387}
               width={466}
             />
