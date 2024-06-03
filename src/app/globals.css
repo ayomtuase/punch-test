@@ -73,9 +73,32 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #525AA0;
+  }
+  
+  ::selection {
+    color: white;
+    background: #525AA0;
+  }
 }
+
 @layer components {
   .slant-edges {
     @apply overflow-visible relative after:absolute after:skew-y-[-3deg] after:-z-10 after:inset-0;
   }
+}
+
+.typing-span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink-caret .5s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #959595 }
 }

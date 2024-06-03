@@ -19,7 +19,7 @@ const Ensure = () => {
           With our comprehensive screening process, we hand-pick highly skilled
           candidates so you can onboard them in a matter of days.
         </p>
-        <Accordion type="single" collapsible className="w-full space-y-1 mt-[30px]">
+        <Accordion type="single" defaultValue='item-2' collapsible className="w-full space-y-1 mt-[30px]">
           {[
             {
               triggerText: "Step 1: Resume Screening",
@@ -45,7 +45,7 @@ const Ensure = () => {
           ].map(({ triggerText, content }, index) => {
             return (
               <AccordionItem
-                value={`item-${index}`}
+                value={`item-${index + 1}`}
                 key={index}
                 className="border border-[#F0F0F0] px-5 rounded-[7px] py-0 data-[state=open]:shadow-[0px_15px_30px_0px_#00000012]"
               >

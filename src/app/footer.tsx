@@ -131,7 +131,7 @@ const Footer = () => {
                       {items.map(({ text, link }) => {
                         return (
                           <Link
-                            className="font-medium text-lg text-white"
+                            className="font-medium text-lg text-white relative pb-2 overflow-hidden after:-translate-x-full after:left-0 hover:after:translate-x-0 after:transition after:duration-300 after:bottom-0 after:h-0.5 after:w-full after:absolute after:bg-[linear-gradient(90deg,#FFFFFF_0%,#202229_99.01%)]"
                             href={link}
                             key={text}
                           >

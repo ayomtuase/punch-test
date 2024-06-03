@@ -1,12 +1,84 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LogoMark } from "@/icons/logo-mark";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+
+const thingsToType = ["developers", "designers", "social media managers"];
+
+const initialInputValue = "Looking for";
 
 const Hero = () => {
+  const [typingSpan, setTypingSpan] = useState<HTMLSpanElement | null>(null);
+  const currentTypingIndex = useRef(0);
+  const [pauseTyping, setPauseTyping] = useState(false);
+  const [inputContent, setInputContent] = useState(initialInputValue);
+
+  const timeout = useRef<NodeJS.Timeout>();
+
+  useEffect(() => {
+    if (!typingSpan) {
+      return;
+    }
+    let i = 0;
+    const speed = 140;
+    let direction: "forwards" | "backwards" = "forwards";
+    if (pauseTyping) {
+      direction = "forwards";
+      i = 0;
+      currentTypingIndex.current = 0;
+      return;
+    }
+
+    function typeWriter() {
+      if (!typingSpan) {
+        return;
+      }
+      let currentTyping = thingsToType[currentTypingIndex.current];
+      if (direction === "forwards" && i < currentTyping.length) {
+        typingSpan.innerHTML += currentTyping.charAt(i);
+        i++;
+        timeout.current = setTimeout(typeWriter, speed);
+        return;
+      }
+      if (direction === "backwards" && i < currentTyping.length && i > 0) {
+        typingSpan.innerHTML = currentTyping.slice(0, i);
+        i--;
+        timeout.current = setTimeout(typeWriter, speed);
+        return;
+      }
+      if (i === currentTyping.length) {
+        direction = "backwards";
+        i--;
+        timeout.current = setTimeout(typeWriter, 1000);
+        return;
+      }
+      if (direction === "backwards" && i === 0) {
+        typingSpan.innerHTML = "";
+        direction = "forwards";
+        if (currentTypingIndex.current === thingsToType.length - 1) {
+          currentTypingIndex.current = 0;
+        } else {
+          currentTypingIndex.current += 1;
+        }
+        timeout.current = setTimeout(typeWriter, speed);
+        return;
+      }
+    }
+
+    typeWriter();
+  }, [typingSpan, pauseTyping]);
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(timeout.current);
+    };
+  });
+
   return (
     <section className="flex justify-center px-4">
       <div className="flex flex-col pt-28 md:pt-[240px] pb-[78px] items-center text-center w-full md:w-4/5 xl:w-3/5">
@@ -30,15 +102,35 @@ const Hero = () => {
               worry about finding the ideal candidate ever again.
             </p>
             <div className="relative mb-10 w-full">
-              <Input
-                className="w-full h-[74px] pl-[27px] pr-[101px] ring-yellow"
-                defaultValue={"Looking for design |"}
-              />
+              <div
+                contentEditable
+                onFocus={() => {
+                  clearTimeout(timeout.current);
+                  setPauseTyping(true);
+                }}
+                onBlur={() => {
+                  if (inputContent === initialInputValue) {
+                    setPauseTyping(false);
+                  }
+                }}
+                onInput={(e) => {
+                  setInputContent(e.currentTarget.textContent ?? "");
+                }}
+                className="w-full group h-[74px] pl-[27px] outline-none ring-offset-2 rounded-md border border-input ring-purple focus-visible:ring-2 py-1.5  text-base font-semibold pr-[101px] text-start flex items-center justify-start"
+              >
+                {initialInputValue}{" "}
+                {!pauseTyping ? (
+                  <span
+                    ref={setTypingSpan}
+                    className="typing-span group-focus-visible:hidden text-[#959595] font-medium border-r-2 ml-1 border-[#959595]"
+                  />
+                ) : null}
+              </div>
               <Button
                 size="icon"
                 className="absolute right-0 top-0 h-[74px] bg-yellow w-[74px]"
               >
-                <LogoMark className="text-dark"/>
+                <LogoMark className="text-dark" />
               </Button>
             </div>
           </div>

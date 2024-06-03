@@ -23,8 +23,8 @@ const Colon = (props: React.SVGProps<SVGSVGElement>) => {
           y2="180.894"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#50589F" />
-          <stop offset="1" stop-color="#202229" stop-opacity="0" />
+          <stop stopColor="#50589F" />
+          <stop offset="1" stopColor="#202229" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

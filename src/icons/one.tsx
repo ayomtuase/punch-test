@@ -24,8 +24,8 @@ export const One = (props: React.SVGProps<SVGSVGElement>) => {
           y2="78.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#A387D1" />
-          <stop offset="1" stop-color="#D1C4E2" stop-opacity="0.46" />
+          <stop stopColor="#A387D1" />
+          <stop offset="1" stopColor="#D1C4E2" stopOpacity="0.46" />
         </linearGradient>
       </defs>
     </svg>
