@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const thingsToType = ["developers", "designers", "social media managers"];
+const thingsToType = ["developers", "designers", "product managers"];
 
 const initialInputValue = "Looking for";
 
@@ -116,7 +116,7 @@ const Hero = () => {
                 onInput={(e) => {
                   setInputContent(e.currentTarget.textContent ?? "");
                 }}
-                className="w-full group h-[74px] pl-[27px] outline-none ring-offset-2 rounded-md border border-input ring-purple focus-visible:ring-2 py-1.5  text-base font-semibold pr-[101px] text-start flex items-center justify-start"
+                className="w-full group h-[74px] pl-3 md:pl-[27px] outline-none ring-offset-2 rounded-md border border-input ring-purple focus-visible:ring-2 py-1.5 text-base font-semibold pr-[101px] text-start flex items-center justify-start"
               >
                 {initialInputValue}{" "}
                 {!pauseTyping ? (
