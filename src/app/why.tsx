@@ -32,9 +32,9 @@ const Why = () => {
   );
 
   return (
-    <section className="why-section overflow-hidden bg-[#F2F4FF]">
+    <section className="why-section overflow-hidden bg-[#F2F4FF] min-h-screen flex items-center">
       <div className="section-container flex flex-nowrap py-32 lg:py-[120px] bg-[#F2F4FF] items-center px-4 md:px-8 lg:px-[70px]">
-        <div className="flex flex-col min-w-[70%] md:min-w-[50%] xl:min-w-[30%] mr-8">
+        <div className="flex flex-col w-[200px] md:w-[293px] mr-8 ">
           <h1 className="text-dark font-bold text-3xl md:leading-[64px] md:text-[54px]">
             Why choose Zwilt?
           </h1>
